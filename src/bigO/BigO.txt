@@ -1,0 +1,93 @@
+Big O cheatsheet -
+https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent
+
+---------------------------------------------------------------------------------
+
+Big O Rules - 
+
+1. Worst Case - 
+   Consider the worst case always.
+
+2. Remove Constants - 
+   Drop constants 
+   Ex --> Big O = 4 + 7n = O(n)
+          O(n) + O(n) = O(2n) == O(n)
+
+3. Different terms for inputs - 
+   Consider we have two loops, each looping through diff array say A1 and A2
+   then we need to consider 2 inputs
+   O(A1 + A2)
+
+   Consider we have nested two loops, each looping through diff array say A1 and A2
+   then we need to consider 2 inputs
+   O(A1 * A2)
+
+
+4. Drop Non Dominants - 
+   Consider Example - 
+   a = ['A', 'B', 'C']
+   function printA(){
+     for(int i = 0; i < a.length; i++){
+      console.log(a[i]);
+     }
+     for(int i = 0; i < a.length; i++){
+       for(int j = 0 ; j < a.length; j++){
+         console.log(a[i], a[j])
+       }
+    }
+    // Output - A B C AA AB AC
+
+    Here, Big O = O(n) + O(n ^ 2)
+    Now, O(n + n^2) => n^2 is always will be bigger than O(n), n^2 is dominant so we
+    drop O(n). So,
+    Big O = O(n) + O(n ^ 2) === O(n ^ 2)
+    
+
+---------------------------------------------------------------------------------
+
+O(n) - (Linear Time)
+
+1. No of operations same times as no of elements.
+2. Example - Here we need to loop till end and covering every element
+
+ a = ['A', 'B', 'C']
+ for(int i = O; i < a.length; i++){
+  if(a[i] == 'C'){
+    console.log("Found C")
+  }
+ }
+
+
+---------------------------------------------------------------------------------
+
+O(1) - (Constant Time)
+
+1. No matter what input size is it is constant always
+2. Example - Here we are printing a[0] no matter the size of a array.
+
+ a = ['A', 'B', 'C']
+ function printA(){
+  console.log(a[0]); //O(1)
+  console.log(a[1]); //O(1)
+  // O(1) + O(1) = O(2)  ---> Still constat time ~ O(1)
+ }
+
+---------------------------------------------------------------------------------
+
+O(n ^ 2) - (Quadratic Time)
+
+1. For nested loops -> multiply
+2. Example - Here we are printing AA AB AC
+
+ a = ['A', 'B', 'C']
+ function printA(){
+  for(int i = 0; i < a.length; i++){
+    for(int j = 0 ; j < a.length; j++){
+      console.log(a[i], a[j])
+    }
+  }
+  // Output - AA AB AC
+  // O(n * n) == O(n ^ 2)
+ }
+
+---------------------------------------------------------------------------------
