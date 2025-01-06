@@ -1,6 +1,17 @@
 Big O cheatsheet -
 https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent
 
+https://www.bigocheatsheet.com/
+
+---------------------------------------------------------------------------------
+
+Good Code - 
+1. Readable
+2. Scalable  ==> i. Time Complexity  ii.Space Complexity
+
+
+---------------------------------------------------------------------------------
+Time Complexity
 ---------------------------------------------------------------------------------
 
 Big O Rules - 
@@ -89,5 +100,56 @@ O(n ^ 2) - (Quadratic Time)
   // Output - AA AB AC
   // O(n * n) == O(n ^ 2)
  }
+
+---------------------------------------------------------------------------------
+
+O(n!) - (Factorial Time)
+
+1. Adding loop for every element
+2. Example - 
+
+ void nFacRuntimeFunc(int n) {
+  for(int i=0; i<n; i++) {
+    nFacRuntimeFunc(n-1);
+  }
+}
+  // Output - 
+  // O(n!)
+ }
+
+---------------------------------------------------------------------------------
+Space Complexity - 
+---------------------------------------------------------------------------------
+
+1. Heap 
+   Store Variables
+
+2. Stack
+   Track of Function Calls
+
+What Causes space complexity - 
+1. Variables
+2. Data Structure
+3. Function Calls
+4. Allocations
+
+
+//#5 Space complexity O(1)
+function boooo(n) {
+  for (let i = 0; i < n; i++) {
+    console.log("booooo");
+  }
+}
+
+// #6 Space complexity O(n)
+function arrayOfHiNTimes(n) {
+  var hiArray = [];
+  for (let i = 0; i < n; i++) {
+    hiArray[i] = "hi";
+  }
+  return hiArray;
+}
+
+arrayOfHiNTimes(6);
 
 ---------------------------------------------------------------------------------
